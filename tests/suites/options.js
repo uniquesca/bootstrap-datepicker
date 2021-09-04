@@ -672,7 +672,9 @@ test('Today Button: "linked" selects today\'s date', function(){
 });
 
 test('Today Highlight: today\'s date is not highlighted by default', patch_date(function(Date){
-    Date.now = UTCDate(2012, 2, 15);
+    Date.now = function(){
+        return UTCDate(2012, 2, 15).getTime();
+    };
     var input = $('<input />')
                 .appendTo('#qunit-fixture')
                 .val('2012-03-05')
@@ -696,7 +698,9 @@ test('Today Highlight: today\'s date is not highlighted by default', patch_date(
 }));
 
 test('Today Highlight: today\'s date is highlighted when not active', patch_date(function(Date){
-    Date.now = new Date(2012, 2, 15);
+    Date.now = function(){
+        return UTCDate(2012, 2, 15).getTime();
+    };
     var input = $('<input />')
                 .appendTo('#qunit-fixture')
                 .val('2012-03-05')
@@ -1929,7 +1933,7 @@ test('Nav arrow html templates .prev click', function () {
     equal(target.text(), '2011');
 });
 
-test('Visibility of the prev and next arrows for year/decade/century/millenium views with startDate and endDate', function(){
+test('Visibility of the prev and next arrows for year/decade/century/millennium views with startDate and endDate', function(){
     var input = $('<input />')
                 .appendTo('#qunit-fixture')
                 .val('01/01/2015')
@@ -1969,7 +1973,7 @@ test('Visibility of the prev and next arrows for year/decade/century/millenium v
     ok(target.hasClass('disabled'), 'Next switcher is hidden');
 });
 
-test('Visibility of the prev arrow for month/year/decade/century/millenium views with startDate eq value', function(){
+test('Visibility of the prev arrow for month/year/decade/century/millennium views with startDate eq value', function(){
     var input = $('<input />')
                 .appendTo('#qunit-fixture')
                 .val('01/01/2014')
@@ -2005,7 +2009,7 @@ test('Visibility of the prev arrow for month/year/decade/century/millenium views
     ok(target.hasClass('disabled'), 'Prev switcher is hidden');
 });
 
-test('Visibility of the next arrow for month/year/decade/century/millenium views with endDate eq value', function(){
+test('Visibility of the next arrow for month/year/decade/century/millennium views with endDate eq value', function(){
     var input = $('<input />')
                 .appendTo('#qunit-fixture')
                 .val('31/12/1999')
