@@ -1835,7 +1835,7 @@
 					fn = fn_map[part[2].toLowerCase()];
 					date = Datepicker.prototype[fn](date, dir);
 				}
-				return Datepicker.prototype._zero_utc_time(date);
+				return Datepicker.prototype._zero_utc_time(Datepicker.prototype._local_to_utc(date));
 			}
 
 			parts = date && date.match(this.nonpunctuation) || [];
