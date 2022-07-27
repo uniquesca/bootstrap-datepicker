@@ -228,7 +228,7 @@ module.exports = function(grunt){
     grunt.registerTask('bump-version', 'string-replace');
 
     grunt.registerTask('qunit-timezone', 'Run timezone tests', function(){
-        process.env.TZ = 'Europe/Moscow';
+        process.env.TZ = 'Europe/Kiev';
         grunt.task.run('qunit:timezone');
     });
 };
