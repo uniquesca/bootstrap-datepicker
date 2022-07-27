@@ -8,6 +8,7 @@ module.exports = function(grunt){
     grunt.initConfig({
         //Metadata
         pkg: grunt.file.readJSON('package.json'),
+        pkgName: 'bootstrap-datepicker',
         banner: [
             '/*!',
             ' * Datepicker for Bootstrap v<%= pkg.version %> (<%= pkg.homepage %>)',
@@ -64,7 +65,7 @@ module.exports = function(grunt){
             },
             main: {
                 src: 'js/bootstrap-datepicker.js',
-                dest: 'dist/js/<%= pkg.name %>.js'
+                dest: 'dist/js/<%= pkgName %>.js'
             }
         },
         uglify: {
@@ -73,7 +74,7 @@ module.exports = function(grunt){
             },
             main: {
                 src: '<%= concat.main.dest %>',
-                dest: 'dist/js/<%= pkg.name %>.min.js'
+                dest: 'dist/js/<%= pkgName %>.min.js'
             },
             locales: {
                 files: [{
@@ -94,31 +95,31 @@ module.exports = function(grunt){
             },
             standalone_bs2: {
                 options: {
-                    sourceMapURL: '<%= pkg.name %>.standalone.css.map'
+                    sourceMapURL: '<%= pkgName %>.standalone.css.map'
                 },
                 src: 'build/build_standalone.less',
-                dest: 'dist/css/<%= pkg.name %>.standalone.css'
+                dest: 'dist/css/<%= pkgName %>.standalone.css'
             },
             standalone_bs3: {
                 options: {
-                    sourceMapURL: '<%= pkg.name %>3.standalone.css.map'
+                    sourceMapURL: '<%= pkgName %>3.standalone.css.map'
                 },
                 src: 'build/build_standalone3.less',
-                dest: 'dist/css/<%= pkg.name %>3.standalone.css'
+                dest: 'dist/css/<%= pkgName %>3.standalone.css'
             },
             main_bs2: {
                 options: {
-                    sourceMapURL: '<%= pkg.name %>.css.map'
+                    sourceMapURL: '<%= pkgName %>.css.map'
                 },
                 src: 'build/build.less',
-                dest: 'dist/css/<%= pkg.name %>.css'
+                dest: 'dist/css/<%= pkgName %>.css'
             },
             main_bs3: {
                 options: {
-                    sourceMapURL: '<%= pkg.name %>3.css.map'
+                    sourceMapURL: '<%= pkgName %>3.css.map'
                 },
                 src: 'build/build3.less',
-                dest: 'dist/css/<%= pkg.name %>3.css'
+                dest: 'dist/css/<%= pkgName %>3.css'
             }
         },
         usebanner: {
@@ -136,14 +137,14 @@ module.exports = function(grunt){
             },
             main: {
                 files: {
-                    'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
-                    'dist/css/<%= pkg.name %>3.min.css': 'dist/css/<%= pkg.name %>3.css'
+                    'dist/css/<%= pkgName %>.min.css': 'dist/css/<%= pkgName %>.css',
+                    'dist/css/<%= pkgName %>3.min.css': 'dist/css/<%= pkgName %>3.css'
                 }
             },
             standalone: {
                 files: {
-                    'dist/css/<%= pkg.name %>.standalone.min.css': 'dist/css/<%= pkg.name %>.standalone.css',
-                    'dist/css/<%= pkg.name %>3.standalone.min.css': 'dist/css/<%= pkg.name %>3.standalone.css'
+                    'dist/css/<%= pkgName %>.standalone.min.css': 'dist/css/<%= pkgName %>.standalone.css',
+                    'dist/css/<%= pkgName %>3.standalone.min.css': 'dist/css/<%= pkgName %>3.standalone.css'
                 }
             }
         },
@@ -161,7 +162,7 @@ module.exports = function(grunt){
         compress: {
             main: {
                 options: {
-                    archive: '<%= pkg.name %>-<%= pkg.version %>-dist.zip',
+                    archive: '<%= pkgName %>-<%= pkg.version %>-dist.zip',
                     mode: 'zip',
                     level: 9,
                     pretty: true
