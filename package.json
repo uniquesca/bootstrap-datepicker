@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap-datepicker",
+  "name": "@uniquesca/bootstrap-datepicker",
   "description": "A datepicker for Bootstrap",
-  "version": "1.9.4",
+  "version": "1.9.5",
   "license": "Apache-2.0",
   "keywords": [
     "datepicker",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uxsolutions/bootstrap-datepicker.git"
+    "url": "https://github.com/uniquesca/bootstrap-datepicker.git"
   },
   "dependencies": {
     "jquery": ">=3.4.0 <4.0.0"

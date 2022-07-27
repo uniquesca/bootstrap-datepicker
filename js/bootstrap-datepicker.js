@@ -2026,7 +2026,7 @@
 
 	/* DATEPICKER VERSION
 	 * =================== */
-	$.fn.datepicker.version = '1.9.4';
+	$.fn.datepicker.version = '1.9.5';
 
 	$.fn.datepicker.deprecated = function(msg){
 		var console = window.console;
